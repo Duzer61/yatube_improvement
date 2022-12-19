@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Об авторе проекта{% endblock %}
+{% block content %}
+<h1>Про автора проекта</h1>
+<p>
+  Всем привет! Меня зовут Данил и я <s>люблю чай</s> программирую на Python.
+  Здесь можно глянуть на мои проекты: <a href="https://github.com/Duzer61" target="_blank">GitHub</a> 
+  Хочу поблагодарить моего попугая Яшку, который поддерживает меня во время работы и даже
+  иногда пытается кормить.
+  <img src="{% static 'img/yashka.jpg' %}" alt="Яшка">
+</p>
+{% endblock %} 
