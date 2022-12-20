@@ -4,7 +4,7 @@
 {% block content %}
 <style type="text/css">
   img {max-width: 100%; max-height: 100%;}
-  h1 {font-size: 50px; margin-top: 30px; margin-bottom: 20px;}
+  h1 {font-size: 45px; margin-top: 20px; margin-bottom: 10px;}
   h2 {margin-top: 40px; margin-bottom: 20px;}
   p {font-size: 17px;}
 </style>
@@ -14,6 +14,7 @@
       <h1>Немного о себе</h1>
     </div>
   </div>
+<hr>
 </div>
 <div class="container">
   <div class="row">
@@ -49,6 +50,24 @@
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
       <img src="{% static 'img/MyPicture.jpg' %}" alt="Мое фото">
     </div>
+  </div>
+  <hr>
+</div>
+<div class="container" style="margin-bottom: 25px;">
+  <div class="text-center">
+    <h3>Контакты для связи</h3>
+    <a href="https://github.com/Duzer61" target="_blank" style="color:#000000; text-decoration:none; margin-right: 20px" >
+    <img src='https://raw.githubusercontent.com/gauravghongde/social-icons/9d939e1c5b7ea4a24ac39c3e4631970c0aa1b920/SVG/Color/Github.svg'
+    class="icon" style="width: 20px; height: 20px; margin-right: 5px; vertical-align: top; margin-top: 2px"
+    alt='Мой GitHub'>Github</a>
+    <a href="https://t.me/Duzer61" target="_blank" style="color:#000000; text-decoration:none; margin-right: 20px">
+    <img src='https://raw.githubusercontent.com/gauravghongde/social-icons/9d939e1c5b7ea4a24ac39c3e4631970c0aa1b920/SVG/Color/Telegram.svg'
+    class="icon" style="width: 20px; height: 20px; margin-right: 5px; vertical-align: top; margin-top: 2px"
+    alt='Мой Telegram'>Telegram</a>
+    <a href="https://vk.com/Duzer61" target="_blank" style="color:#000000; text-decoration:none">
+    <img src='https://raw.githubusercontent.com/gauravghongde/social-icons/9d939e1c5b7ea4a24ac39c3e4631970c0aa1b920/SVG/Color/VK.svg'
+    class="icon" style="width: 20px; height: 20px; margin-right: 5px; vertical-align: top; margin-top: 2px"
+    alt='Мой VK'>VK</a>
   </div>
 </div>
 {% endblock %} 
