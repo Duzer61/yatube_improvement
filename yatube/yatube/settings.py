@@ -33,6 +33,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '[::1]',
     'testserver',
+    'www.Duzer.pythonanywhere.com',
+    'Duzer.pythonanywhere.com',
 ]
 
 INTERNAL_IPS = [
