@@ -8,6 +8,12 @@
         <span style="color:red">Ya</span>tube
       </a>
       <ul class="nav nav-pills">
+        {% if view_name != 'posts:index' %}
+        <li class="nav-item"> 
+          <a class="nav-link"
+            href="{% url 'posts:index' %}">На главную</a>
+        </li>
+        {% endif %}
         <li class="nav-item"> 
           <a class="nav-link {% if view_name == 'about:author' %}active{% endif %}"
             href="{% url 'about:author' %}">Об авторе</a>
