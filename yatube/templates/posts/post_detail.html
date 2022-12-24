@@ -44,8 +44,14 @@
         {{post.text}}
       </p>
       {% if post.author == request.user %}
-        <a href="{% url 'posts:post_edit' post.id %}">редактировать пост</a>
-        <a href="{% url 'posts:post_delete' post.id %}">удалить пост</a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'posts:post_edit' post.id %}">редактировать пост</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'posts:post_delete' post.id %}">удалить пост</a>
+          </li>
+        </ul>
       {% endif %}
       {% include 'posts/includes/comments.html' %}
       </div>
