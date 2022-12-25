@@ -7,6 +7,10 @@
 
 {% block content %}
 <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
   <div class="row">
     <aside class="col-12 col-md-3">
       <ul class="list-group list-group-flush">
@@ -55,13 +59,39 @@
             <a class="nav-link" href="{% url 'posts:post_edit' post.id %}">редактировать пост</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'posts:post_delete' post.id %}">удалить пост</a>
+            <a class="nav-link" href="#bannerformmodal" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">удалить пост</a>
           </li>
+              <!-- Кнопка-триггер модального окна -->
+          <!--<li>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Запустите демо модального окна
+            </button>
+          </li> -->
         </ul>
       {% endif %}
       {% include 'posts/includes/comments.html' %}
       </div>
     </article>
   </div>
-
+<!-- Модальное окно -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-danger">
+        <h4 class="modal-title" id="exampleModalLabel">Внимание!</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body h5 text-danger text-center">
+        <p>Вы действительно хотите удалить сообщение?</p>
+        <p>Восстановление будет невозможно.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Отмена</button>
+        <button type="button" class="btn btn-secondary">Да, удалить.</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Конец модального окна-->
 {% endblock %}
