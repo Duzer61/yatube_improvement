@@ -60,14 +60,8 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#bannerformmodal" data-bs-toggle="modal"
-              data-bs-target="#exampleModal">удалить пост</a>
+              data-bs-target="#deleteWarningModal">удалить пост</a>
           </li>
-              <!-- Кнопка-триггер модального окна -->
-          <!--<li>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Запустите демо модального окна
-            </button>
-          </li> -->
         </ul>
       {% endif %}
       {% include 'posts/includes/comments.html' %}
@@ -75,11 +69,12 @@
     </article>
   </div>
 <!-- Модальное окно -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+<div class="modal fade" id="deleteWarningModal" tabindex="-1"
+  aria-labelledby="deleteWarningModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-light bg-gradient">
       <div class="modal-header text-danger">
-        <h4 class="modal-title" id="exampleModalLabel">Внимание!</h4>
+        <h4 class="modal-title" id="deleteWarningModalLabel">Внимание!</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
       </div>
       <div class="modal-body h5 text-danger text-center">
@@ -88,7 +83,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Отмена</button>
-        <button type="button" class="btn btn-secondary">Да, удалить.</button>
+        <form action="{% url 'posts:post_delete' post.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-secondary" role="submit">Да, удалить.</button>
+        </form>
       </div>
     </div>
   </div>
